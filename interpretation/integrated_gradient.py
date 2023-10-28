@@ -28,13 +28,14 @@ from project.module.utils.data_module import fMRIDataModule
 
 from pathlib import Path
 
-save_dir = '{path_to_save_dir}'
-jobid = {project number}
-for i in Path(f'SwiFT/output/{neptune project id}/RSTOT-{jobid}/').glob('checkpt*'):
+save_dir = # write path to save_dir
+jobid = # write project number
+neptune_project_id = # write project id. ex)user_id/project_name
+for i in Path(f'SwiFT/output/{neptune_project_id}/RSTOT-{jobid}/').glob('checkpt*'):
         ckpt_path = i
 ckpt = torch.load(ckpt_path, map_location='cuda:0' if torch.cuda.is_available() else 'cpu')
-ckpt['hyper_parameters']['image_path'] = '{path_to_MNI_to_TRs_folder}' 
-ckpt['hyper_parameters']['default_root_dir'] = 'path_to_your_main_dir'
+ckpt['hyper_parameters']['image_path'] = # write path to MNI_to_TRs folder 
+ckpt['hyper_parameters']['default_root_dir'] = # write path to use default_root_dir
 ckpt['hyper_parameters']['shuffle_time_sequence'] = False
 ckpt['hyper_parameters']['time_as_channel'] = False
 ckpt['hyper_parameters']['eval_batch_size'] = 1
