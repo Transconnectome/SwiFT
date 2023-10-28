@@ -1,4 +1,3 @@
-#source /global/common/software/nersc/shasta2105/python/3.8-anaconda-2021.05/etc/profile.d/conda.sh
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -24,31 +23,25 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 
 from project.module.models.swin4d_transformer_ver7 import SwinTransformer4D
-from project.module.pl_classifier_v6_JB import LitClassifier_v6
-from project.module.utils.data_module4 import fMRIDataModule4
-from project.module.utils.data_module_ABCD import fMRIDataModule_ABCD
+from project.module.pl_classifier import LitClassifier
+from project.module.utils.data_module import fMRIDataModule
 
 from pathlib import Path
 
-# def forward(x):
-#     return model.clf(model(x))
-
-save_dir = '/pscratch/sd/j/junbeom/Integrated_gradients_nt5/'
-jobid = 2841
-for i in Path(f'/global/cfs/cdirs/m4244/junbeom/SwinTransformer4D/output/kjb961013/rs-to-task/RSTOT-{jobid}/').glob('checkpt*'):
+save_dir = '{path_to_save_dir}'
+jobid = {project number}
+for i in Path(f'SwiFT/output/{neptune project id}/RSTOT-{jobid}/').glob('checkpt*'):
         ckpt_path = i
 ckpt = torch.load(ckpt_path, map_location='cuda:0' if torch.cuda.is_available() else 'cpu')
-ckpt['hyper_parameters']['image_path'] = '/global/cfs/cdirs/m3898/UKB_20227_1_MNI_to_TRs_orig' # ABCD
-# ckpt['hyper_parameters']['image_path'] = '/global/cfs/cdirs/m4244/HCP_MNI_to_TRs/' #HCP
-
-ckpt['hyper_parameters']['default_root_dir'] = '/global/cfs/cdirs/m4244'
+ckpt['hyper_parameters']['image_path'] = '{path_to_MNI_to_TRs_folder}' 
+ckpt['hyper_parameters']['default_root_dir'] = 'path_to_your_main_dir'
 ckpt['hyper_parameters']['shuffle_time_sequence'] = False
 ckpt['hyper_parameters']['time_as_channel'] = False
 ckpt['hyper_parameters']['eval_batch_size'] = 1
 
 args = ckpt['hyper_parameters']
 
-model = LitClassifier_v6(**args)
+model = LitClassifier(**args)
 model.cuda(0) if torch.cuda.is_available() else model
 model.load_state_dict(ckpt['state_dict'])
 
@@ -63,7 +56,7 @@ kwargs = {
     "internal_batch_size": 5,
 }
 
-data_module = fMRIDataModule4(**args)
+data_module = fMRIDataModule(**args)
 data_module.setup()
 data_module.prepare_data()
 test_loader = data_module.test_dataloader()
