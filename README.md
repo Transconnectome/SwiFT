@@ -286,7 +286,7 @@ pytorch_lightning offers useful arguments for training. For example, we used `--
   
  ```bash
 # interactive
-cd SwinTransformer4D/
+cd SwiFT/
 bash sample_scripts/sample_script.sh
 ```
 This bash script was tested on the server cluster (Linux) with 8 RTX 3090 GPUs.
@@ -305,7 +305,7 @@ export CUDA_VISIBLE_DEVICES={usable GPU number}
 - Training SwiFT with Slurm (if you run the codes at Slurm-based clusters)
 Please refer to the tutorial (https://slurm.schedmd.com/sbatch.html) for Slurm commands.
  ```bash
-cd SwinTransformer4D/
+cd SwiFT/
 sbatch sample_scripts/sample_script.slurm
 ```
 
