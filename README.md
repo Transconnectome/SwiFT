@@ -43,7 +43,7 @@ We highly recommend you to use our conda environment.
 git clone https://github.com/Transconnectome/SwiFT.git
 
 # install project   
-cd SwinTransformer4D
+cd SwiFT
 conda env create -f envs/py39.yaml
 conda activate py39
  ```
