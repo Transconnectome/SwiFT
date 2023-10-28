@@ -97,7 +97,7 @@ python project/main.py --data_module dummy --classifier_module default -h
 ```
 
 ```
-usage: main.py [-h] [--seed SEED] [--dataset_name {S1200,ABCD,Dummy,UKB,HBN}]
+usage: main.py [-h] [--seed SEED] [--dataset_name {S1200,ABCD,UKB,Dummy}]
                [--downstream_task DOWNSTREAM_TASK]
                [--downstream_task_type DOWNSTREAM_TASK_TYPE]
                [--classifier_module CLASSIFIER_MODULE]
