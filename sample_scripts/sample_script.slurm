@@ -13,7 +13,7 @@ set +x
 # ntasks-per-node = gpus-per-node = devices
 
 # correct this (same as #SBATCH --chdir)
-cd {3.where your 'SwinTransformer4D' is located}
+cd {3.where your 'SwiFT' project is located}
 # correct this
 source /usr/anaconda3/etc/profile.d/conda.sh
 conda activate py39
