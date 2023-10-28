@@ -1,4 +1,4 @@
-cd .. # move to where 'SwinTransformer4D is located'
+cd .. # move to where 'SwiFT is located'
 source /usr/anaconda3/etc/profile.d/conda.sh
 conda activate py39
 
