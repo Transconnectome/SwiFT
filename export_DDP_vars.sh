@@ -1,0 +1,4 @@
+export NODE_RANK=`expr $SLURM_PROCID / 4`
+#export MASTER_ADDR=$SLURM_SUBMIT_HOST
+echo $NODE_RANK
+
