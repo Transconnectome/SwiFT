@@ -1,7 +1,7 @@
 cd .. # move to where 'SwiFT is located'
 source /usr/anaconda3/etc/profile.d/conda.sh
 conda activate py39
-
+ 
 TRAINER_ARGS='--accelerator gpu --max_epochs 10 --precision 16 --num_nodes 1 --devices 1 --strategy DDP' # specify the number of gpus as '--devices'
 MAIN_ARGS='--loggername neptune --classifier_module v6 --dataset_name S1200 --image_path {image_path}' 
 DATA_ARGS='--batch_size 8 --num_workers 8  --input_type rest'
