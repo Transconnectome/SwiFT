@@ -14,7 +14,7 @@
 ## 📌&nbsp;&nbsp;Introduction
 This project is a collaborative research effort between Seoul National University's M.IN.D Lab (PI: Taesup Moon) and Connectome Lab (PI: Jiook Cha), with the goal of developing a scalable analysis model for fMRI. SwiFT, based on the Swin Transformer, can effectively predict various biological and cognitive variables from fMRI scans and even explain these predictions. We plan to release a large-scale pretrained SwiFT model in the near future, which we hope will assist many researchers using deep learning for fMRI analysis. You can find the research paper at the following link. [SwiFT] (https://arxiv.org/abs/2307.05916) Feel free to ask any questions regarding this project to the authors. 
 
-*Contact*
+**Contact**
 - First authors
   - Peter Yongho Kim: peterkim98@snu.ac.kr
   - Junbeom Kwon: kjb961013@snu.ac.kr
