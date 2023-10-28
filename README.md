@@ -287,7 +287,7 @@ DataModule arguments:
 ### 4.2 Hidden Arguments for PyTorch lightning
 pytorch_lightning offers useful arguments for training. For example, we used `--max_epochs` and `--default_root_dir` in our experiments. We recommend the user refer to the following link to check the argument lists.
 
-(https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.trainer.trainer.Trainer.html?highlight=trainer)
+([https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.trainer.trainer.Trainer.html?highlight=trainer](https://lightning.ai/docs/pytorch/1.8.6/common/trainer.html))
 
 ### 4.3 Commands/scripts for running classification/regression tasks
 - Training SwiFT in an interactive way
