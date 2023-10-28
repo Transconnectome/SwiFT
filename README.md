@@ -360,6 +360,7 @@ The resulting data structure is as follows:
    │   │  ├──     :
    └── metadata
        └── metafile.csv     <- file containing target variable
+```
 
 ## 7. Define the Dataset class for your own dataset.
 * The data loading pipeline works by processing image and metadata at 'project/module/utils/data_module.py' and passing the paired image-label tuples to the Dataset classes at 'project/module/utils/data_preprocessing_and_load/datasets.py.'
