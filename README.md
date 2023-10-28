@@ -40,7 +40,7 @@ This repository implements the Swin 4D fMRI transformer (SwiFT).
 We highly recommend you to use our conda environment.
 ```bash
 # clone project   
-git clone https://github.com/Transconnectome/SwinTransformer4D.git
+git clone https://github.com/Transconnectome/SwiFT.git
 
 # install project   
 cd SwinTransformer4D
@@ -86,7 +86,7 @@ Our directory structure looks like this:
 - Single forward & backward pass for debugging SwinTransformer4D model.
 
 ```bash
-cd SwinTransformer4D/
+cd SwiFT/
 python test/module_test_swin4d.py
  ```  
 
@@ -293,7 +293,7 @@ This bash script was tested on the server cluster (Linux) with 8 RTX 3090 GPUs.
 You should correct the following lines.
 
  ```bash
-cd {path to your 'SwinTransformer4D' directory}
+cd {path to your 'SwiFT' directory}
 source /usr/anaconda3/etc/profile.d/conda.sh (init conda) # might change if you have your own conda.
 conda activate {conda env name}
 MAIN_ARGS='--loggername neptune --classifier_module v6 --dataset_name {dataset_name} --image_path {path to the image data}' # This script assumes that you have preprocessed HCP dataset. You may run the codes anyway with "--dataset_name Dummy"
