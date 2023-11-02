@@ -349,6 +349,13 @@ After the minimal preprocessing steps, you should perform additional preprocessi
 - each fMRI volume is saved separately as torch checkpoints to facilitate window-based training.
 - remove non-brain(background) voxels that are over 96 voxels
    - you should open your fMRI scans to determine the level that does not cut out the brain regions
+   - you can use `nilearn` to visualize your fMRI data. (official documentation: [here](https://nilearn.github.io/dev/index.html))
+  ```python
+  from nilearn import plotting
+  from nilearn.image import mean_img
+  
+  plotting.view_img(mean_img(fmri_filename), threshold=None)
+  ```
    - if your dimension is under 96, you can pad non-brain voxels at 'datasets.py' files.
 
 * refer to the annotation in the 'preprocessing.py' code to adjust it for your own datasets.
