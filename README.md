@@ -311,7 +311,7 @@ export CUDA_VISIBLE_DEVICES={usable GPU number}
  ```
 
 - Training SwiFT with Slurm (if you run the codes at Slurm-based clusters)
-Please refer to the tutorial (https://slurm.schedmd.com/sbatch.html) for Slurm commands.
+Please refer to the [tutorial](https://slurm.schedmd.com/sbatch.html) for Slurm commands.
  ```bash
 cd SwiFT/
 sbatch sample_scripts/sample_script.slurm
@@ -319,7 +319,9 @@ sbatch sample_scripts/sample_script.slurm
 
 ### 4.4 Commands for the self-supervised pertaining
 To perform self-supervised pre-training, add the following arguments to the base script (you can change the contrastive type):
+```bash
 --pretraining --use_contrastive --contrastive_type 1
+```
 
 ## 5. Loggers
 We offer two options for loggers.
@@ -347,7 +349,7 @@ After the minimal preprocessing steps, you should perform additional preprocessi
 - normalization: voxel normalization(not used) and whole-brain z-normalization (mainly used)
 - change fMRI volumes to floating point 16 to save storage and decrease IO bottleneck.
 - each fMRI volume is saved separately as torch checkpoints to facilitate window-based training.
-- remove non-brain(background) voxels that are over 96 voxels
+- remove non-brain(background) voxels that are over 96 voxels.
    - you should open your fMRI scans to determine the level that does not cut out the brain regions
    - you can use `nilearn` to visualize your fMRI data. (official documentation: [here](https://nilearn.github.io/dev/index.html))
   ```python
@@ -380,7 +382,7 @@ The resulting data structure is as follows:
 ## 7. Define the Dataset class for your own dataset.
 * The data loading pipeline works by processing image and metadata at 'project/module/utils/data_module.py' and passing the paired image-label tuples to the Dataset classes at 'project/module/utils/data_preprocessing_and_load/datasets.py.'
 * you should implement codes for combining image path, subject_name, and target variables at 'project/module/utils/data_module.py'
-* you should define Dataset Class for your own dataset at 'project/module/utils/data_preprocessing_and_load/datasets.py.' In the Dataset class (__getitem__), you should specify how many background voxels you would add or remove to make the volumes shaped 96 * 96 * 96.
+* you should define Dataset Class for your dataset at 'project/module/utils/data_preprocessing_and_load/datasets.py.' In the Dataset class (__getitem__), you should specify how many background voxels you would add or remove to make the volumes shaped 96 * 96 * 96.
 
 
 ### Citation   
