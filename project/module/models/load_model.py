@@ -30,7 +30,7 @@ def load_model(model_name, hparams=None):
         )
     elif model_name == "emb_mlp":
         from .emb_mlp import mlp
-        net = mlp(final_embedding_size=128, num_tokens = hparams.embed_dim * (hparams.c_multiplier ** (n_stages - 1)), use_normalization=True, n_local_frames=hparams.n_local_frames)
+        net = mlp(final_embedding_size=128, num_tokens = hparams.embed_dim * (hparams.c_multiplier ** (n_stages - 1)), use_normalization=True)
     elif model_name == "clf_mlp":
         if hparams.clf_head_version == 'v1':
             from .clf_mlp import mlp
