@@ -59,8 +59,12 @@ Our directory structure looks like this:
 
 ```
 ├── notebooks                    <- Useful Jupyter notebook examples are given (TBU)
-├── output                       <- Experiment log and checkpoints will be saved here 
-├── tutorial_vit                 <- A tutorial code that train ViT model on CIFAR10 using PyTorch lightning module and log result on Neptune
+├── output                       <- Experiment log and checkpoints will be saved here once you train a model
+├── envs                         <- Conda environment
+├── pretrained_models            <- Pretrained model checkpoints
+│   ├── contrastive_pretrained.ckpt        <- Contrastively pretrained model on all three datasets 
+│   ├── hcp_sex_classification.ckpt        <- Model trained for the sex classification task on HCP dataset 
+│   ├── split_hcp.txt                      <- Data split for the trained HCP model 
 ├── project                 
 │   ├── module                   <- Every module is given in this directory
 │   │   ├── models               <- Models (Swin fMRI Transformer)
@@ -76,7 +80,7 @@ Our directory structure looks like this:
 │   ├── module_test_swin.py     <- Code for debugging SwinTransformer
 │   └── module_test_swin4d.py   <- Code for debugging 4DSwinTransformer
 │ 
-├── sample_scripts                     <- Example shell scripts for training
+├── sample_scripts              <- Example shell scripts for training
 │
 ├── .gitignore                  <- List of files/folders ignored by git
 ├── export_DDP_vars.sh          <- setup file for running torch DistributedDataParallel (DDP) 
@@ -382,6 +386,13 @@ The resulting data structure is as follows:
 * you should implement codes for combining image path, subject_name, and target variables at 'project/module/utils/data_module.py'
 * you should define Dataset Class for your dataset at 'project/module/utils/data_preprocessing_and_load/datasets.py.' In the Dataset class (__getitem__), you should specify how many background voxels you would add or remove to make the volumes shaped 96 * 96 * 96.
 
+## 8. Pretrained model checkpoints
+We provide some pretrained model checkpoints under the pretrained_models directory.
+* contrastive_pretrained.ckpt contains a contrastively pre-trained model using all three datasets: HCP, ABCD, and UKB.
+* hcp_sex_classification.ckpt contains the model trained from scratch for the sex classification task on the HCP dataset.
+* split_hcp.txt contains the train, validation, test split used for training the hcp_sex_classification.ckpt model.
+* To fine-tune the provided models for another task, use the load_model_path argument on main.py
+Please contact the authors if you have any additional requests for the pretrained model checkpoints.
 
 ### Citation   
 ```
