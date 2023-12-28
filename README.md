@@ -392,6 +392,7 @@ We provide some pretrained model checkpoints under the pretrained_models directo
 * hcp_sex_classification.ckpt contains the model trained from scratch for the sex classification task on the HCP dataset.
 * split_hcp.txt contains the train, validation, test split used for training the hcp_sex_classification.ckpt model.
 * To fine-tune the provided models for another task, use the load_model_path argument on main.py
+
 Please contact the authors if you have any additional requests for the pretrained model checkpoints.
 
 ### Citation   
