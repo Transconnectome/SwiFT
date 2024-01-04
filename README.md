@@ -395,7 +395,7 @@ We provide some pretrained model checkpoints under the pretrained_models directo
 
 Please contact the authors if you have any additional requests for the pretrained model checkpoints.
 
-## 9. Model scalability check
+## 9. Scalability testing
 We allow some functionalities that can check the scalability of SwiFT.
 
 * For using Dummy Dataset, you should specify '--dataset_name' argument as 'Dummy'

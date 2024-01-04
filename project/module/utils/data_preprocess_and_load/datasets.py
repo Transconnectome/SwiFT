@@ -321,11 +321,20 @@ class Dummy(BaseDataset):
         y = torch.randn(( 1, 96, 96, 96, sequence_length),dtype=torch.float16) #self.y[seq_idx]
         sex = torch.randint(0,2,(1,)).float()
         target = torch.randint(0,2,(1,)).float()
-        
-        return {
-                "fmri_sequence": y,
+
+        if self.contrastive:
+            rand_y = torch.randn(( 1, 96, 96, 96, sequence_length),dtype=torch.float16)
+            return {
+                "fmri_sequence": (y, rand_y),
                 "subject_name": subj,
                 "target": target,
                 "TR": 0,
-                "sex": sex,
-            } 
+                }
+        else:
+            return {
+                    "fmri_sequence": y,
+                    "subject_name": subj,
+                    "target": target,
+                    "TR": 0,
+                    "sex": sex,
+                    } 
