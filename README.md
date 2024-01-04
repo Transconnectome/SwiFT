@@ -395,6 +395,14 @@ We provide some pretrained model checkpoints under the pretrained_models directo
 
 Please contact the authors if you have any additional requests for the pretrained model checkpoints.
 
+## 9. Model scalability check
+We allow some functionalities that can check the scalability of SwiFT.
+
+* For using Dummy Dataset, you should specify '--dataset_name' argument as 'Dummy'
+* For checking the effect of the training sample, you can limit the number of subjects for model training by specifying the number for the '--limit_training_samples' argument.
+* For checking the throughput following the number of GPUs/nodes, you should add the '--scalability_check' argument to your script.
+
+
 ### Citation   
 ```
 @article{kim2023swift,
