@@ -299,7 +299,7 @@ class LitClassifier(pl.LightningModule):
                 output = torch.stack([logits[1].squeeze(), target], dim=1) # logits[1] : regression head
             else:
                 output = torch.stack([logits.squeeze(), target.squeeze()], dim=1)
-            return (subj, output)
+            return (subj, output.detach().cpu())
 
     def validation_epoch_end(self, outputs):
         # called at the end of the validation epoch
@@ -314,10 +314,10 @@ class LitClassifier(pl.LightningModule):
             out_test_list = []
             for subj, out in outputs_valid:
                 subj_valid += subj
-                out_valid_list.append(out.detach())
+                out_valid_list.append(out)
             for subj, out in outputs_test:
                 subj_test += subj
-                out_test_list.append(out.detach())
+                out_test_list.append(out)
             subj_valid = np.array(subj_valid)
             subj_test = np.array(subj_test)
             total_out_valid = torch.cat(out_valid_list, dim=0)
