@@ -10,12 +10,12 @@
 
 
 ## 📌&nbsp;&nbsp;Introduction
-This project is a collaborative research effort between Seoul National University's M.IN.D Lab (PI: Taesup Moon) and Connectome Lab (PI: Jiook Cha), with the goal of developing a scalable analysis model for fMRI. SwiFT, based on the Swin Transformer, can effectively predict various biological and cognitive variables from fMRI scans and even explain these predictions. We plan to release a large-scale pretrained SwiFT model in the near future, which we hope will assist many researchers using deep learning for fMRI analysis. You can find the research paper at [SwiFT](https://arxiv.org/abs/2307.05916). Feel free to ask any questions regarding this project to the authors. 
+This project is a collaborative research effort between Seoul National University's M.IN.D Lab (PI: Taesup Moon) and Connectome Lab (PI: Jiook Cha), intending to develop a scalable analysis model for fMRI. SwiFT, based on the Swin Transformer, can effectively predict various biological and cognitive variables from fMRI scans and even explain these predictions. We plan to release a large-scale pretrained SwiFT model in the near future, which we hope will assist many researchers using deep learning for fMRI analysis. You can find the research paper at [SwiFT](https://arxiv.org/abs/2307.05916). Feel free to ask the authors any questions regarding this project. 
 
 **Contact**
 - First authors
   - Peter Yongho Kim: peterkim98@snu.ac.kr
-  - Junbeom Kwon: kjb961013@snu.ac.kr
+  - Junbeom Kwon: kjb961013@gmail.com
 - Corresponding authors
   - Professor Taesup Moon: tsmoon@snu.ac.kr
   - Professor Jiook Cha: connectome@snu.ac.kr
@@ -98,7 +98,14 @@ Our directory structure looks like this:
 ```bash
 cd SwiFT/
 python test/module_test_swin4d.py
- ```  
+ ```
+
+**Tutorials with Colab**
+We have created a Colab-based tutorial that covers reading fMRI data, pre-processing the data for SwiFT, and training and inferring with SwiFT. The data used in the tutorial assumes a similar format to HCP, and with this code, you can easily apply SwiFT to your own data. The SwiFT code for the tutorial on Google Drive may differ slightly from the main GitHub repo.
+
+https://drive.google.com/drive/folders/1zIBb-r9qycLO-W2BdTrlUnvb0YnzntyN?usp=sharing
+
+Please email Junbeom Kwon (kjb961013@gmail.com) with any questions regarding this tutorial.
 
 ### 4.1 Arguments for trainer
 You can check the arguments list by using -h
@@ -401,6 +408,7 @@ We allow some functionalities that can check the scalability of SwiFT.
 * For using Dummy Dataset, you should specify '--dataset_name' argument as 'Dummy'
 * For checking the effect of the training sample, you can limit the number of subjects for model training by specifying the number for the '--limit_training_samples' argument.
 * For checking the throughput following the number of GPUs/nodes, you should add the '--scalability_check' argument to your script.
+
 
 
 ### Citation   
