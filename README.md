@@ -91,7 +91,7 @@ Our directory structure looks like this:
 
 ## 4. Train model
 
-### 4.0 Quick start
+### 4.0 Quick start & Tutorial
 
 - Single forward & backward pass for debugging SwinTransformer4D model.
 
@@ -100,7 +100,8 @@ cd SwiFT/
 python test/module_test_swin4d.py
  ```
 
-**Tutorials with Colab**
+- Tutorials with Colab
+  
 We have created a Colab-based tutorial that covers reading fMRI data, pre-processing the data for SwiFT, and training and inferring with SwiFT. The data used in the tutorial assumes a similar format to HCP, and with this code, you can easily apply SwiFT to your own data. The SwiFT code for the tutorial on Google Drive may differ slightly from the main GitHub repo.
 
 https://drive.google.com/drive/folders/1zIBb-r9qycLO-W2BdTrlUnvb0YnzntyN?usp=sharing
