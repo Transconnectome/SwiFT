@@ -415,9 +415,11 @@ We allow some functionalities that can check the scalability of SwiFT.
 ### Citation   
 ```
 @article{kim2023swift,
-  title={SwiFT: Swin 4D fMRI Transformer},
-  author={Kim, Peter Yongho and Kwon, Junbeom and Joo, Sunghwan and Bae, Sangyoon and Lee, Donggyu and Jung, Yoonho and Yoo, Shinjae and Cha, Jiook and Moon, Taesup},
-  journal={arXiv preprint arXiv:2307.05916},
+  title={Swift: Swin 4d fmri transformer},
+  author={Kim, Peter and Kwon, Junbeom and Joo, Sunghwan and Bae, Sangyoon and Lee, Donggyu and Jung, Yoonho and Yoo, Shinjae and Cha, Jiook and Moon, Taesup},
+  journal={Advances in Neural Information Processing Systems},
+  volume={36},
+  pages={42015--42037},
   year={2023}
 }
 ```   
