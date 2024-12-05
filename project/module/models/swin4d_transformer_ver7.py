@@ -797,7 +797,7 @@ class SwinTransformer4D(nn.Module):
 
         self.norm = norm_layer(self.num_features)
         self.avgpool = nn.AdaptiveAvgPool1d(1)  #
-        self.head = nn.Linear(self.num_features, 1) if num_classes == 2 else num_classes
+        # self.head = nn.Linear(self.num_features, 1) if num_classes == 2 else num_classes # moved this part to clf_mlp or reg_mlp
 
 
     def forward(self, x):
